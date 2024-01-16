@@ -8,11 +8,14 @@ import 'package:sqflite/sqflite.dart';
 
 var getIt = GetIt.asNewInstance();
 
-setupGetIt() {
+void setupGetIt() {
   getIt.registerSingletonAsync<Database>(
-      () async => await SQLiteDatabase.getDatabase());
-  getIt.registerSingleton<TaskRepository>(
-      TaskSQLiteRepository(getIt<Database>()));
+    () async => await SQLiteDatabase.getDatabase(),
+  );
+  getIt.registerSingletonWithDependencies<TaskRepository>(
+    () => TaskSQLiteRepository(getIt<Database>()),
+    dependsOn: [Database],
+  );
 }
 
 void main() {
