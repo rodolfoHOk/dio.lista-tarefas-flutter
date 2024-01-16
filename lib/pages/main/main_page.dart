@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lista_tarefas_app/models/task.dart';
 import 'package:lista_tarefas_app/shared/widgets/add_task_dialog.dart';
+import 'package:lista_tarefas_app/shared/widgets/task_item.dart';
 
 class MainPage extends StatefulWidget {
   final String title;
@@ -18,16 +20,11 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'to do',
-            ),
-          ],
-        ),
-      ),
+      body: ListView.builder(
+          itemCount: 1,
+          itemBuilder: (builder, index) {
+            return TaskItem(task: Task(1, "Tarefa 1", false));
+          }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(
