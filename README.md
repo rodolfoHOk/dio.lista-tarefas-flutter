@@ -14,6 +14,7 @@
 
 - sqflite
 - path
+- get_it
 
 ## Galeria de Imagens do projeto
 
