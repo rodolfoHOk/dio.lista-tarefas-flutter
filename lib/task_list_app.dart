@@ -16,7 +16,7 @@ class TaskListApp extends StatelessWidget {
       darkTheme: ThemeData.dark(
         useMaterial3: true,
       ),
-      home: const MainPage(title: 'Flutter Demo Home Page'),
+      home: const MainPage(title: 'Lista de Tarefas'),
     );
   }
 }
