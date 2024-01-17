@@ -15,6 +15,7 @@
 - sqflite
 - path
 - get_it
+- provider
 
 ## Galeria de Imagens do projeto
 
