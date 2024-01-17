@@ -16,6 +16,8 @@
 - path
 - get_it
 - provider
+- animated_text_kit
+- google_fonts
 
 ## Galeria de Imagens do projeto
 
@@ -35,3 +37,10 @@
 
 - Abrir um dispositivo emulado Android
 - Terminal na raiz do projeto: flutter run
+
+### to do 
+
+- melhorar splash screen
+- validar descrição
+- mensagens de erros
+- implementar loadings
