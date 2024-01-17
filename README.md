@@ -2,7 +2,7 @@
 
 # Contatos Flutter App
 
-> Desafio Criando um App Flutter de Lista de Contatos da DIO
+> Criando um App Flutter com Gerenciamento de Estado e Reatividade - Dio
 
 ## Tecnologias
 
