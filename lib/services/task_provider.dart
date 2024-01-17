@@ -10,31 +10,29 @@ class TaskProvider extends ChangeNotifier {
   bool _justNotCompleted = false;
   List<Task> _tasks = <Task>[];
 
-  TaskProvider(this.taskRepository);
+  TaskProvider(this.taskRepository) {
+    _refreshTasks();
+  }
 
   bool get justNotCompleted => _justNotCompleted;
 
   Future<void> setJustNotCompleted(bool value) async {
     _justNotCompleted = value;
-    _tasks = await _getTasks();
+    _refreshTasks();
     notifyListeners();
   }
 
-  Future<List<Task>> get tasks async {
-    if (_tasks.isEmpty) {
-      _tasks = await _getTasks();
-    }
-    return _tasks;
-  }
+  List<Task> get tasks => _tasks;
 
-  Future<List<Task>> _getTasks() async {
-    return await taskRepository.list(_justNotCompleted);
+  Future<void> _refreshTasks() async {
+    _tasks = await taskRepository.list(_justNotCompleted);
+    notifyListeners();
   }
 
   Future<void> add(Task task) async {
     await taskRepository.create(task);
     _tasks.add(task);
-    notifyListeners();
+    _refreshTasks();
   }
 
   Future<void> update(int id, Task task) async {
@@ -43,12 +41,12 @@ class TaskProvider extends ChangeNotifier {
     }
     await taskRepository.update(id, task);
     _tasks[_tasks.indexWhere((element) => element.id == id)] = task;
-    notifyListeners();
+    _refreshTasks();
   }
 
   Future<void> remove(int id) async {
     await taskRepository.delete(id);
     _tasks.remove(_tasks.firstWhere((element) => element.id == id));
-    notifyListeners();
+    _refreshTasks();
   }
 }
