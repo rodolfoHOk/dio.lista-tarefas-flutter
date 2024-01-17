@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:lista_tarefas_app/models/task.dart';
+import 'package:lista_tarefas_app/services/task_provider.dart';
 
 class AddTaskDialog extends StatelessWidget {
-  const AddTaskDialog({super.key});
+  final TaskProvider taskProvider;
+
+  const AddTaskDialog({super.key, required this.taskProvider});
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +38,12 @@ class AddTaskDialog extends StatelessWidget {
           child: const Text("Cancelar"),
         ),
         ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
+          onPressed: () async {
+            await taskProvider
+                .add(Task.create(descriptionController.text, false));
+            if (context.mounted) {
+              Navigator.pop(context);
+            }
           },
           child: const Text("Adicionar"),
         ),
