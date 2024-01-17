@@ -22,7 +22,16 @@
 ## Galeria de Imagens do projeto
 
 <img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/dio-task-flutter-01.png" alt="Lista Tarefas Flutter Image 01" width="225"/>
-<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/dio-task-flutter-02.png" alt="Lista Tarefas Flutter Flutter Image 02" width="225"/>
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/dio-task-flutter-02.png" alt="Lista Tarefas Flutter Image 02" width="225"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/dio-task-flutter-03.png" alt="Lista Tarefas Flutter Image 03" width="225"/>
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/dio-task-flutter-04.png" alt="Lista Tarefas Flutter Image 04" width="225"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/dio-task-flutter-05.png" alt="Lista Tarefas Flutter Image 05" width="225"/>
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/dio-task-flutter-06.png" alt="Lista Tarefas Flutter Image 06" width="225"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/dio-task-flutter-07.png" alt="Lista Tarefas Flutter Image 07" width="225"/>
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/dio-task-flutter-08.png" alt="Lista Tarefas Flutter Image 08" width="225"/>
 
 ## Rodar
 
