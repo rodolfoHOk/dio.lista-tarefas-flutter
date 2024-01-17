@@ -39,6 +39,18 @@ class AddTaskDialog extends StatelessWidget {
         ),
         ElevatedButton(
           onPressed: () async {
+            if (descriptionController.text.trim().isEmpty) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  backgroundColor: Colors.red,
+                  content: Text(
+                    "Descrição não pode estar em branco",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              );
+              return;
+            }
             await taskProvider
                 .add(Task.create(descriptionController.text, false));
             if (context.mounted) {

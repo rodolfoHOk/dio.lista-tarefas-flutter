@@ -37,10 +37,3 @@
 
 - Abrir um dispositivo emulado Android
 - Terminal na raiz do projeto: flutter run
-
-### to do 
-
-- melhorar splash screen
-- validar descrição
-- mensagens de erros
-- implementar loadings
