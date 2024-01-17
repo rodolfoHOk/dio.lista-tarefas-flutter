@@ -14,23 +14,21 @@ class SQLiteDatabase {
   static Database? _db;
 
   static Future<Database> getDatabase() async {
-    return _db ?? await _initDatabase();
+    return _db ?? await initDatabase();
   }
 
-  static Future<Database> _initDatabase() async {
-    var databasesPath = await getDatabasesPath();
-    var databasePath = path.join(databasesPath, 'task.db');
+  static Future<Database> initDatabase() async {
     var database = await openDatabase(
-      databasePath,
+      path.join(await getDatabasesPath(), 'database.db'),
       version: scripts.length,
       onCreate: (Database db, int version) async {
-        for (var i = 1; i < scripts.length; i++) {
+        for (var i = 1; i <= scripts.length; i++) {
           await db.execute(scripts[i]!);
           debugPrint(scripts[i]);
         }
       },
       onUpgrade: (Database db, int oldVersion, int newVersion) async {
-        for (var i = oldVersion + 1; i < scripts.length; i++) {
+        for (var i = oldVersion + 1; i <= scripts.length; i++) {
           await db.execute(scripts[i]!);
           debugPrint(scripts[i]);
         }
