@@ -22,14 +22,14 @@ class _MainPageState extends State<MainPage> {
       ),
       body: ListView.builder(
           itemCount: 1,
-          itemBuilder: (builder, index) {
+          itemBuilder: (_, index) {
             return TaskItem(task: Task(1, "Tarefa 1", false));
           }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(
             context: context,
-            builder: (builder) {
+            builder: (_) {
               return const AddTaskDialog();
             },
           );

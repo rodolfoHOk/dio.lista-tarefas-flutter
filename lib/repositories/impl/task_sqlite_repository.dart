@@ -28,7 +28,10 @@ class TaskSQLiteRepository implements TaskRepository {
   }
 
   @override
-  Future<void> update(Task task) async {
+  Future<void> update(int id, Task task) async {
+    if (task.id == 0) {
+      task.id = id;
+    }
     await db.rawUpdate(
         '''UPDATE tasks SET description = ?, completed = ? WHERE id = ?''',
         [task.description, task.completed, task.id]);
