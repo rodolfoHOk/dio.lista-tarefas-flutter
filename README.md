@@ -1,5 +1,3 @@
-# Lista de Tarefas App
-
 # Contatos Flutter App
 
 > Criando um App Flutter com Gerenciamento de Estado e Reatividade - Dio
